@@ -1,0 +1,10 @@
+.header{
+    height: 20vh;
+    background-color: #a35762;
+}
+.headertext{
+    text-align: center;
+    color: aliceblue;
+    text-justify: auto;
+    padding-top: 6vh;
+}

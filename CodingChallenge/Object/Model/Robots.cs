@@ -2,7 +2,7 @@
 
 public class Robots
 {
-    int RobotsId { get; set; }
-    string Name { get; set; }
-    int PlanetId { get; set; }
+    public int RobotId { get; set; }
+    public string Name { get; set; }
+    public int TeamId { get; set; }
 }

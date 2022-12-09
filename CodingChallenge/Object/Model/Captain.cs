@@ -2,7 +2,7 @@
 
 public class Captain
 {
-    int CaptainId { get; set; }
-    string Name { get; set; }
-    int PlanetId { get; set; }
+    public int CaptainId { get; set; }
+    public string Name { get; set; }
+    public int TeamId { get; set; }
 }

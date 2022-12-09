@@ -1,7 +1,7 @@
 export class Planets{
-  Id?: number;
-  Name?: string;
-  Description?: string;
-  Status?: number;
-  RobotsNumber?: number;
+  planetsId: number = 0;
+  name: string = '';
+  description: string = '';
+  status: number = 0;
+  robotsNumber: number = 0;
 }

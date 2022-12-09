@@ -1,0 +1,64 @@
+<div *ngIf="!editable" class="border border-success p-2 mb-2 border-opacity-25">
+    <div class="container text-center">
+        <div class="row">
+          <div class="col-2">
+            <h5>{{Planet.name}}</h5>
+          </div>
+          <div class="col-6">
+            <p>{{Planet.description}}</p>
+            <p>by captain: </p>
+            <h6>Robots:</h6>
+            <div *ngFor="let item of Robot">
+              {{item.name}}
+            </div>
+            <h3>da</h3>
+          </div>
+          <div class="col-2">
+            <h4>{{Planet.status}}</h4>
+            <div *ngIf="!!Captain">
+                <button class="btn btn-primary" (click)="Edit()">Edit</button>
+            </div>
+          </div>
+        </div>
+    </div>
+
+</div>
+<div *ngIf="!!editable" class="border border-success p-2 mb-2 border-opacity-25">
+    <div class="container text-center">
+
+      <div class="form-floating ">
+        <input type="text" class="form-control" id="floatingInput" value="{{Planet.name}}">
+        <label for="floatingInput">Planet Name:</label>
+      </div>
+      <div class="form-floating">
+        <textarea class="form-control" value="{{Planet.description}}" id="floatingTextarea2" style="height: 100px"></textarea>
+        <label for="floatingTextarea2">Description:</label>
+      </div>
+      <div class="form-floating">
+        <textarea class="form-control"  id="floatingTextarea2" style="height: 100px"></textarea>
+        <label for="floatingTextarea2">Captain:</label>
+      </div>
+      <div *ngFor="let item of Robot">
+        <app-robot
+                [PlanetId]="Planet.planetsId"
+                [Robot]="item"
+        ></app-robot>
+      </div>
+      <button class="btn btn-primary btn-sm" (click)="AddRobot()"> Add Robot</button>
+      <div class="form-floating">
+        <select class="form-select" id="floatingSelect" value="{{Planet.status}}" aria-label="Floating label select example">
+          <option selected>Select status:</option>
+          <option value="1">OK</option>
+          <option value="2">!OK</option>
+          <option value="3">En Route</option>
+          <option value="3">ToDo</option>
+        </select>
+        <label for="floatingSelect">Status:</label>
+      </div>
+
+      <button class="btn btn-danger btn-sm" (click)="Save()">Save</button>
+      <button class="btn btn-primary btn-sm" (click)="Edit()">Cancel</button>
+    </div>
+</div>
+
+

@@ -32,7 +32,6 @@ export class BoxComponent {
     this._service.GetRobots(this.Planet.planetsId).subscribe((result)=> {
       this.Robot = result;
       this.book = result;
-      console.log(this.Robot);
     });
   }
 

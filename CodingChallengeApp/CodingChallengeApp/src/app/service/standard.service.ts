@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Captain } from '../Model/Captain';
 import { Planets } from '../Model/Planets';
 import { Robots } from '../Model/Robots';
 
@@ -19,6 +20,10 @@ export class StandardService {
 
   public GetRobots(planetId:number):  Observable<Robots[]> {
     return this.http.post<Robots[]>(`${this.url}/GetRobots`,planetId);
+  }
+
+  public GetCaptain():  Observable<Captain[]> {
+    return this.http.get<Captain[]>(`${this.url}/Captain`);
   }
 
 }

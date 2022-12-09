@@ -8,6 +8,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { XPANDComponent } from './xpand/xpand.component';
 import { BoxComponent } from './box/box.component';
 import { RobotComponent } from './robot/robot.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { RobotComponent } from './robot/robot.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

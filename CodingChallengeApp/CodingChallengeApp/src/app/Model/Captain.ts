@@ -1,5 +1,5 @@
 export class Captain{
-  Id?: number;
-  Name?: string;
-  PlanetId?: number;
+  captainId?: number;
+  name?: string;
+  teamId?: number;
 }

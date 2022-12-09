@@ -4,13 +4,16 @@
     </div>
     <div class="col">
       <h3>Robot</h3>
-      <button type="button" class="btn btn-primary" (click)="Robot()">Access</button>
+      <button type="button" class="btn btn-primary" (click)="NavigateRobot()">Access</button>
       <br>
       <br>
       <br>
       <br>
-      <h3>Captain</h3>
-      <button type="button" class="btn btn-primary" (click)="Captain()">Access</button>
+      <h3>Select a captain</h3>
+      <select [(ngModel)]="Option" class="form-control">
+        <option *ngFor="let item of Captain" [ngValue]="item">{{item.name}}</option>
+      </select>
+      <button type="button" class="btn btn-primary" (click)="NavigateCaptain()">Access</button>
     </div>
     <div class="col">
     </div>

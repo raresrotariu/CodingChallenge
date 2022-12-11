@@ -5,7 +5,7 @@
             <img src="{{Planet.path}}"  class="img-fluid img">
             <h5>{{Planet.name}}</h5>
           </div>
-          <div class="col-7 text">
+          <div class="col-6 text">
             <p>{{Planet.description}}</p>
             <p>by captain: {{Planet.captainName}}</p>
             <h6>Robots:
@@ -14,18 +14,18 @@
               </span>
             </h6>
           </div>
-          <div class="col-1">
+          <div class="col-3 ">
             <div *ngIf="Planet.statusName == 'OK'">
-              <h4 class="ok-green">{{Planet.statusName}}</h4>
+              <h6 class="ok-green">{{Planet.statusName}}</h6>
             </div>
             <div *ngIf="Planet.statusName == '!OK'">
-              <h4 class="ok-red">{{Planet.statusName}}</h4>
+              <h6 class="ok-red">{{Planet.statusName}}</h6>
             </div>
             <div *ngIf="Planet.statusName == 'TODO'">
-              <h4 class="ok-yellow">{{Planet.statusName}}</h4>
+              <h6 class="ok-yellow">{{Planet.statusName}}</h6>
             </div>
             <div *ngIf="Planet.statusName == 'En route'">
-              <h4 class="ok-gray">{{Planet.statusName}}</h4>
+              <h6 class="ok-gray">{{Planet.statusName}}</h6>
             </div>
             <div *ngIf="CaptainId == Planet.captainId">
                 <button class="btn btn-primary okbtn" (click)="Edit()">Edit</button>
@@ -43,6 +43,7 @@
         <textarea class="form-control"  [(ngModel)]="Planet.description" id="floatingTextarea2" style="height: 100px"></textarea>
         <label for="floatingTextarea2">Description:</label>
       </div>
+      <br>
       <h5>Captain: {{Planet.captainName}}</h5>
       <div *ngFor="let item of Robot">
         {{item.name}}
@@ -57,7 +58,7 @@
         </select>
         <label for="floatingSelect">Status:</label>
       </div>
-
+      <br>
       <button class="btn btn-danger btn-sm" (click)="Save()">Save</button>
       <button class="btn btn-primary btn-sm" (click)="Edit()">Cancel</button>
     </div>

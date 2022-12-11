@@ -26,4 +26,8 @@ export class StandardService {
     return this.http.get<Captain[]>(`${this.url}/Captain`);
   }
 
+  public UpdatePlanet(planets: Planets) : Observable<Planets> {
+    return this.http.post<Planets>(`${this.url}/UpdatePlanet`,planets);
+  }
+
 }

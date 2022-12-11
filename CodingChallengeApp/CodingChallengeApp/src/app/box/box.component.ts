@@ -12,44 +12,51 @@ export class BoxComponent {
 
   public editable: boolean = false;
   public Robot: Robots [] = [];
-  public book: Robots [] = [];
 
   @Input() public Planet:Planets = new Planets();
   @Input() public Robots:Robots = new Robots();
-  @Input() public Captain:boolean = true;
+  @Input() public CaptainId:number = 0;
 
-  constructor(private _service:StandardService){
+  private _clonePlanet:Planets = new Planets();
 
+  constructor(private _service:StandardService) {
   }
-
-
 
   ngOnInit(): void {
     this.getrobots();
+    this._clonePlanet = this.Planet;
   }
 
   public getrobots() {
     this._service.GetRobots(this.Planet.planetsId).subscribe((result)=> {
       this.Robot = result;
-      this.book = result;
+
     });
   }
 
-  public AddRobot() {
-    this.Robot.push(new Robots);
+  public UpdatePlanet() {
+    this._service.UpdatePlanet(this.Planet).subscribe((result) => {
+      this.Planet = result;
+      console.log(this.Planet);
+    });
   }
+
 
   public Edit() {
     if(this.editable)
     {
+      this.Planet = this._clonePlanet;
       this.editable = false;
     } else {
       this.editable = true;
     }
   }
 
-  public Save() {
 
+  public Save() {
+    this.UpdatePlanet();
+    this.editable = false;
+    this.ngOnInit();
   }
 
 }

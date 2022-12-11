@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { XPANDComponent } from './xpand/xpand.component';
 import { BoxComponent } from './box/box.component';
-import { RobotComponent } from './robot/robot.component';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
@@ -16,7 +15,6 @@ import { FormsModule } from '@angular/forms';
     HomePageComponent,
     XPANDComponent,
     BoxComponent,
-    RobotComponent
   ],
   imports: [
     BrowserModule,

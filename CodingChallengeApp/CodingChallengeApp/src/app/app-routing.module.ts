@@ -5,7 +5,7 @@ import { XPANDComponent } from './xpand/xpand.component';
 
 const routes: Routes = [
   { path:'', component: HomePageComponent },
-  { path:'xpand', component: XPANDComponent },
+  { path:'xpand', component: XPANDComponent,data:{id:0} },
 
 ];
 

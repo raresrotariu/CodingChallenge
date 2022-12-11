@@ -24,19 +24,18 @@ export class HomePageComponent {
   }
 
   public NavigateRobot () {
-    this._router.navigateByUrl('/xpand');
+    this._router.navigateByUrl('/xpand',{state:{id:0}});
   }
 
   public NavigateCaptain () {
     if(this.Option.captainId !== undefined ) {
-      this._router.navigateByUrl('/xpand');
+      this._router.navigateByUrl('/xpand',{state:{id:this.Option.captainId}});
     }
   }
 
   public GetCaptain() {
     this._service.GetCaptain().subscribe((result)=>{
       this.Captain = result;
-      console.log(result);
     });
   }
 

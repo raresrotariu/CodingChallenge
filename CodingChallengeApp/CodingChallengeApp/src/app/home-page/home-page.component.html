@@ -1,21 +1,23 @@
-<div class="container text-center">
-  <div class="row">
-    <div class="col">
-    </div>
-    <div class="col">
-      <h3>Robot</h3>
-      <button type="button" class="btn btn-primary" (click)="NavigateRobot()">Access</button>
-      <br>
-      <br>
-      <br>
-      <br>
-      <h3>Select a captain</h3>
-      <select [(ngModel)]="Option" class="form-control">
-        <option *ngFor="let item of Captain" [ngValue]="item">{{item.name}}</option>
-      </select>
-      <button type="button" class="btn btn-primary" (click)="NavigateCaptain()">Access</button>
-    </div>
-    <div class="col">
+<div class="all">
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-1">
+      </div>
+      <div class="col-10 margin-top-30">
+        <h3>Robot:</h3>
+        <button type="button" class="btn btn-primary" (click)="NavigateRobot()">Access</button>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h3>Select a captain:</h3>
+        <select [(ngModel)]="Option" class="form-control">
+          <option *ngFor="let item of Captain" [ngValue]="item">{{item.name}}</option>
+        </select>
+        <button type="button" class="btn btn-primary margin-top-1" (click)="NavigateCaptain()">Access</button>
+      </div>
+      <div class="col-1">
+      </div>
     </div>
   </div>
 </div>

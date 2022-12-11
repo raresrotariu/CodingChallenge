@@ -10,15 +10,12 @@ namespace CodingChallenge.Controllers;
 [ApiController]
 public class StandardController : ControllerBase
 {
-    
-
     private readonly IConfiguration _configuration;
     public StandardController(IConfiguration configuration)
     {
         _configuration = configuration;
     }
         
-
     [HttpGet]
     public async Task<ActionResult<List<Planets>>> GetPlanets()
     {
@@ -47,7 +44,7 @@ public class StandardController : ControllerBase
     public async Task<ActionResult<List<Planets>>> UpdatePlanet(Planets planets)
     {
         using var connection = new SqlConnection(_configuration.GetConnectionString("DefaultConnection"));
-        var result = await connection.QueryAsync<Planets>("UpdatePlanet", new { PlanetId = planets.PlanetsId, PlanetDescription = planets.Description, PlanetStatus = planets.Status }, commandType: CommandType.StoredProcedure);
+        var result =  connection.QueryFirstOrDefault<Planets>("UpdatePlanet", new { PlanetId = planets.PlanetsId, PlanetDescription = planets.Description, PlanetStatus = planets.Status }, commandType: CommandType.StoredProcedure);
         return Ok(result);
     }
 

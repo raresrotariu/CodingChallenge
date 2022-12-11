@@ -1,0 +1,32 @@
+.img {
+    width: 75px;
+    height: 75px;
+}
+
+.text{
+    text-align: left;
+}
+
+.okbtn{
+    margin-top: 10px;
+}
+
+.ok-green{
+    color: green;
+    margin-top: 4vh;
+}
+
+.ok-red{
+    color: red;
+    margin-top: 4vh;
+}
+
+.ok-yellow{
+    color: yellow;
+    margin-top: 4vh;
+}
+
+.ok-gray{
+    color: gray;
+    margin-top: 4vh;
+}

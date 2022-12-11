@@ -37,7 +37,6 @@ export class BoxComponent {
   public UpdatePlanet() {
     this._service.UpdatePlanet(this.Planet).subscribe((result) => {
       this.Planet = result;
-      console.log(this.Planet);
     });
   }
 

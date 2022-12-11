@@ -19,13 +19,10 @@ export class XPANDComponent {
   ngOnInit(): void {
     this.GetData();
     this.CaptainId = history.state.id;
-    //console.log(this.CaptainId);
-    //this.RouteBack();
   }
 
   public GetData() {
     this._service.GetPlanets().subscribe((result)=> {
-      //console.log(result);
       this.Planets = result;
     });
   }

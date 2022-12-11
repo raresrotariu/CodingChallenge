@@ -1,0 +1,6 @@
+CREATE TABLE dbo.Team
+	(
+	TeamId INT IDENTITY(1,1) PRIMARY KEY,
+	PlanetsId INT,
+	CONSTRAINT FK_PlanetTeam FOREIGN KEY (PlanetsId) REFERENCES Planet(PlanetsId)
+	)
